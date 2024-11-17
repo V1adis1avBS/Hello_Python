@@ -118,17 +118,19 @@ if __name__ == '__main__':
 
 
 def check_month(month: int):
-    if month == 1 or month == 2 or month == 12:
-        result = 'Зима'
-    elif month == 3 or month == 4 or month == 5:
-        result = 'Весна'
-    elif month == 6 or month == 7 or month == 8:
-        result ='Лето'
-    elif month == 9 or month == 10 or month == 11:
+
+    if month > 8 and month < 12:
         result = 'Осень'
+    elif (month > 0 and month < 3) or month == 12:
+        result = 'Зима'
+    elif month > 2 and month < 6:
+        result = 'Весна'
+    elif month > 5 and month < 9:
+        result = 'Лето'
     else:
-        result = 'Некорректный номер месяца'
+        result = "Некорректный номер месяца"
     return result
+    
 if __name__ == '__main__':
     # Этот код менять не надо
     season = check_month(1)
